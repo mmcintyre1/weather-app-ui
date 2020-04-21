@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import CitySearchBar from './CitySearchBar'
+import CitySearchBar from './components/CitySearchBar'
 
 function App() {
   return (
