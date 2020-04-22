@@ -29,9 +29,9 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <form class="search-container" onSubmit={this.handleSubmit}>
-        <i class="search-icon"><FaSearch /></i>
-        <input class="search-box" type="search" value={this.state.value} onChange={this.handleChange} name="search" placeholder="Search..." />
+      <form class="searchContainer" onSubmit={this.handleSubmit}>
+        <i class="searchIcon"><FaSearch /></i>
+        <input class="searchBox" type="search" value={this.state.value} onChange={this.handleChange} name="search" placeholder="Search..." />
         <input type="submit" value="Search" class="searchButton" />
       </form>
     )
