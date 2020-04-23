@@ -13,7 +13,6 @@ class WeatherContainer extends React.Component {
       dailyData: null
     }
     this.getWeather = this.getWeather.bind(this)
-
   }
 
   componentDidMount() {
@@ -22,7 +21,7 @@ class WeatherContainer extends React.Component {
 
   getWeather(zip) {
     fetchWeather(zip, apiKeys.openWeatherKey)
-      .then( data  => {
+      .then(data => {
         this.setState({
           fullData: data,
           dailyData: data.filter(reading => reading.dt_txt.includes("18:00:00"))
