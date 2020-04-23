@@ -7,7 +7,7 @@ class SearchBar extends React.Component {
     super(props);
     this.state = {
       value: '',
-      searchedTerm: null
+      searchedTerm: "abc"
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -29,10 +29,10 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <form class="searchContainer" onSubmit={this.handleSubmit}>
-        <i class="searchIcon"><FaSearch /></i>
-        <input class="searchBox" type="search" value={this.state.value} onChange={this.handleChange} name="search" placeholder="Search..." />
-        <input type="submit" value="Search" class="searchButton" />
+      <form className="searchContainer" onSubmit={this.handleSubmit}>
+        <i className="searchIcon"><FaSearch /></i>
+        <input className="searchBox" type="search" value={this.state.value} onChange={this.handleChange} name="search" placeholder={this.props.placeholder} />
+        <input type="submit" value="Search" className="searchButton" />
       </form>
     )
   }

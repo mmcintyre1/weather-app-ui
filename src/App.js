@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
-import SearchBar from './components/SearchBar'
+import Header from './components/Header'
+import WeatherContainer from './components/WeatherContainer'
 
 function App() {
   return (
     <div>
-      <SearchBar />
+      <Header />
+      <WeatherContainer/>
     </div>
   );
 }
