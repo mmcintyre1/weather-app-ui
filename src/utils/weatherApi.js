@@ -7,6 +7,6 @@ export function fetchWeather(zip, apiKey) {
       if (!data.list) {
         throw new Error(data.message);
       };
-      return data.list;
+      return data;
     });
 };

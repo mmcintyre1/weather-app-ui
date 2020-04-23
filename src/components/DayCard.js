@@ -17,18 +17,18 @@ class DayCard extends React.Component {
   }
 
   render() {
-    const newDate = Date();
     if (this.props.reading) {
-      const todaysData = this.props.reading[0]
-      this.formatImgUrl(todaysData)
+      const tomorrowsData = this.props.reading[0]
+      this.formatImgUrl(tomorrowsData)
       return (
         <div className="cardContainer">
           <div className="card">
-            <h3 className="card-title">{newDate}</h3>
-            <i className={this.formatImgUrl(todaysData)}></i>
-            <h2>{Math.round(todaysData.main.temp)} °F</h2>
+            <h3 className="card-title">{this.props.location}</h3>
+            <p className="text-muted">{tomorrowsData.dt_txt}</p>
+            <i className={this.formatImgUrl(tomorrowsData)}></i>
+            <h2>{Math.round(tomorrowsData.main.temp)} °F</h2>
             <div className="card-body">
-              <p className="card-text">{todaysData.weather[0].description}</p>
+              <p className="card-text">{tomorrowsData.weather[0].description}</p>
             </div>
           </div>
         </div>

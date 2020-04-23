@@ -10,30 +10,30 @@ class WeatherContainer extends React.Component {
     super(props);
     this.state = {
       fullData: null,
-      dailyData: null
+      dailyData: null,
+      location: null
     }
     this.getWeather = this.getWeather.bind(this)
   }
 
-  componentDidMount() {
-    this.getWeather('01845')
-  }
-
   getWeather(zip) {
-    fetchWeather(zip, apiKeys.openWeatherKey)
-      .then(data => {
-        this.setState({
-          fullData: data,
-          dailyData: data.filter(reading => reading.dt_txt.includes("18:00:00"))
+    if (zip) {
+      fetchWeather(zip, apiKeys.openWeatherKey)
+        .then(data => {
+          this.setState({
+            location: `${data.city.name}, ${data.city.country}`,
+            fullData: data,
+            dailyData: data.list.filter(reading => reading.dt_txt.includes("18:00:00"))
+          })
         })
-      })
+    }
   }
 
   render() {
     return (
       <div>
-        <SearchBar placeholder='ZIP codes...' />
-        <DayCard reading={this.state.dailyData} />
+        <SearchBar placeholder='ZIP codes...' submitFunc={this.getWeather} />
+        <DayCard reading={this.state.dailyData} location={this.state.location} />
       </div>
     )
   }

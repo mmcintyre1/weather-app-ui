@@ -7,7 +7,6 @@ class SearchBar extends React.Component {
     super(props);
     this.state = {
       value: '',
-      searchedTerm: "abc"
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -21,9 +20,9 @@ class SearchBar extends React.Component {
   handleSubmit(event) {
     this.setState({
       value: '',
-      searchedTerm: this.state.value
     })
     // prevents the form from submitting and thus refreshing the page
+    this.props.submitFunc(this.state.value)
     event.preventDefault();
   }
 
