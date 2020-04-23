@@ -22,7 +22,7 @@ class DayCard extends React.Component {
       const todaysData = this.props.reading[0]
       this.formatImgUrl(todaysData)
       return (
-        <div className="col-sm-2">
+        <div className="cardContainer">
           <div className="card">
             <h3 className="card-title">{newDate}</h3>
             <i className={this.formatImgUrl(todaysData)}></i>
